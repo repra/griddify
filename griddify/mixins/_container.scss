@@ -1,0 +1,18 @@
+@mixin __grid-container-css {
+
+  $column-gutter-base:  nth(__g(gutters), 3);
+  $column-gutter-large: nth(__g(gutters), 4);
+
+  .#{__g_classes(container)} {
+    max-width: __g(width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $column-gutter-base;
+    padding-right: $column-gutter-base;
+
+    @media (min-width: __g(gutter-breakpoint)) {
+      padding-left: $column-gutter-large;
+      padding-right: $column-gutter-large;
+    }
+  }
+}

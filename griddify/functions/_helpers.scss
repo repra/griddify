@@ -1,0 +1,10 @@
+// return value from settings map
+@function __g($value) {
+  @if not map-has-key($__grid, $value) {
+    @error '"#{$value}" not found in settings';
+    @return false;
+  }
+  @else {
+    @return map-get($__grid, $value);
+  }
+}

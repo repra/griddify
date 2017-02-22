@@ -1,0 +1,31 @@
+@import "functions/helpers";
+@import "functions/classes";
+@import "functions/maps-extended";
+
+@import "mixins/column";
+@import "mixins/container";
+@import "mixins/row";
+
+@mixin grid-init($custom: null) {
+
+  $defaults: (
+    width: 1280px,
+    columns: 12,
+    gutters: (16px, 24px, 16px, 24px),
+    gutter-breakpoint: 960px,
+    classes: (
+      prefix: 'grid',
+      separator: '-',
+      container: 'container',
+      row: 'row',
+      col: 'col',
+      col-offset: 'col-offset'
+    ),
+  );
+
+  $__grid: map-merge-deep($defaults, $custom) !global;
+
+  @include __grid_container-css;
+  @include __grid-row-css;
+  @include __grid_column;
+}

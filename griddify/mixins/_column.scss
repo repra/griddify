@@ -1,0 +1,52 @@
+@mixin __grid_generate-column-classes($suffix: null) {
+
+  $breakpoint-class-suffix: '';
+
+  @if type-of($suffix) == 'string' {
+    $breakpoint-class-suffix: '-' + $suffix;
+  }
+
+  @for $i from 1 through __g(columns) {
+    .#{__g_classes(col)}#{$breakpoint-class-suffix}-#{$i} {
+      flex-basis: 100% / __g(columns) * $i;
+      max-width: 100% / __g(columns) * $i;
+    }
+  }
+
+  @for $i from 1 through __g(columns) {
+    .#{__g_classes(col-offset)}#{$breakpoint-class-suffix}-#{$i} {
+      margin-left: calc(100% / #{__g(columns)} * #{$i});
+    }
+  }
+}
+
+
+@mixin __grid_column {
+
+  $row-gutter-base:     nth(__g(gutters), 1);
+  $row-gutter-large:    nth(__g(gutters), 2);
+  $column-gutter-base:  nth(__g(gutters), 3);
+  $column-gutter-large: nth(__g(gutters), 4);
+
+  // general
+  .#{__g_classes(col)},
+  div[class^="#{__g_classes(col)}-"] {
+    width: 100%;
+    padding: $row-gutter-base / 2 $column-gutter-base / 2;
+
+    @media (min-width: __g(gutter-breakpoint)) {
+      padding: $row-gutter-large / 2 $column-gutter-large / 2;
+    }
+  }
+
+  // classes
+  @include __grid_generate-column-classes();
+
+  @include breakpoint(480px) {
+    @include __grid_generate-column-classes(md);
+  }
+
+  @include breakpoint(840px) {
+    @include __grid_generate-column-classes(lg);
+  }
+}

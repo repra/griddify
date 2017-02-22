@@ -1,0 +1,17 @@
+@function __g_classes($type-class) {
+  $prefix:    map-get(__g(classes), prefix);
+  $separator: map-get(__g(classes), separator);
+  $type:      map-get(__g(classes), $type-class);
+
+  $class: '';
+
+  // prefix
+  @if type-of($prefix) == 'string' and $prefix != '' {
+    $class: $class + $prefix;
+  }
+
+  // type
+  $class: $class + $separator + $type;
+
+  @return $class;
+}
