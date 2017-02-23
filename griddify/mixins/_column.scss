@@ -43,10 +43,14 @@
   @include __grid_generate-column-classes();
 
   @include breakpoint(480px) {
+    @include __grid_generate-column-classes(sm);
+  }
+
+  @include breakpoint(720px) {
     @include __grid_generate-column-classes(md);
   }
 
-  @include breakpoint(840px) {
+  @include breakpoint(960px) {
     @include __grid_generate-column-classes(lg);
   }
 }
