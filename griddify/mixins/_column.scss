@@ -21,7 +21,7 @@
 }
 
 
-@mixin __grid_column {
+@mixin __grid_column-css {
 
   $row-gutter-base:     nth(__g(gutters), 1);
   $row-gutter-large:    nth(__g(gutters), 2);
