@@ -30,7 +30,7 @@
 
   // general
   .#{__g_classes(col)},
-  div[class^="#{__g_classes(col)}-"] {
+  *[class*="#{__g_classes(col)}-"] {
     width: 100%;
     padding: $row-gutter-base / 2 $column-gutter-base / 2;
 
