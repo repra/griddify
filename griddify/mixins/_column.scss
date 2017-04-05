@@ -32,10 +32,14 @@
   .#{__g_classes(col)},
   *[class*="#{__g_classes(col)}-"] {
     width: 100%;
-    padding: $row-gutter-base / 2 $column-gutter-base / 2;
+    padding-left: $column-gutter-base / 2;
+    padding-right: $column-gutter-base / 2;
+    // padding: $row-gutter-base / 2 $column-gutter-base / 2;
 
     @media (min-width: __g(gutter-breakpoint)) {
-      padding: $row-gutter-large / 2 $column-gutter-large / 2;
+      padding-left: $column-gutter-large / 2;
+      padding-right: $column-gutter-large / 2;
+      // padding: $row-gutter-large / 2 $column-gutter-large / 2;
     }
   }
 

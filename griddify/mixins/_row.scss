@@ -9,43 +9,47 @@
     display: flex;
     flex-wrap: wrap;
 
-    padding: $row-gutter-base / 2 $column-gutter-base / 2;
+    padding-left: $column-gutter-base / 2;
+    padding-right: $column-gutter-base / 2;
+    // padding: $row-gutter-base / 2 $column-gutter-base / 2;
     margin-left: -$column-gutter-base;
     margin-right: -$column-gutter-base;
 
     @media (min-width: __g(gutter-breakpoint)) {
-      padding: $row-gutter-large / 2 $column-gutter-large / 2;
+      padding-left: $column-gutter-large / 2;
+      padding-right: $column-gutter-large / 2;
+      // padding: $row-gutter-large / 2 $column-gutter-large / 2;
       margin-left: -$column-gutter-large;
       margin-right: -$column-gutter-large;
     }
 
-    & + .#{__g_classes(row)} {
-      margin-top: -$row-gutter-base;
+    // & + .#{__g_classes(row)} {
+    //   margin-top: -$row-gutter-base;
 
-      @media (min-width: __g(gutter-breakpoint)) {
-        margin-top: -$row-gutter-large;
-      }
-    }
+    //   @media (min-width: __g(gutter-breakpoint)) {
+    //     margin-top: -$row-gutter-large;
+    //   }
+    // }
 
-    &:last-child {
-      .#{__g_classes(col)} & {
-        margin-bottom: -$row-gutter-base;
+    // &:last-child {
+    //   .#{__g_classes(col)} & {
+    //     margin-bottom: -$row-gutter-base;
 
-        @media (min-width: __g(gutter-breakpoint)) {
-          margin-bottom: -$row-gutter-large;
-        }
-      }
-    }
+    //     @media (min-width: __g(gutter-breakpoint)) {
+    //       margin-bottom: -$row-gutter-large;
+    //     }
+    //   }
+    // }
 
-    &:first-child {
-      .#{__g_classes(col)} & {
-        margin-top: -$row-gutter-base;
+    // &:first-child {
+    //   .#{__g_classes(col)} & {
+    //     margin-top: -$row-gutter-base;
 
-        @media (min-width: __g(gutter-breakpoint)) {
-          margin-top: -$row-gutter-large;
-        }
-      }
-    }
+    //     @media (min-width: __g(gutter-breakpoint)) {
+    //       margin-top: -$row-gutter-large;
+    //     }
+    //   }
+    // }
 
     &.#{__g_classes(col)}-space-between {
       justify-content: space-between;
